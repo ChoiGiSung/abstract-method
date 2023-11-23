@@ -12,7 +12,18 @@ class MethodsApplicationTests {
 
     @Test
     fun contextLoads() {
-        methodFinder.find(Sample::class.java, "sample", listOf(Int::class.java, Int::class.java), listOf(1, 2))
+
+        methodFinder.find(
+            Sample::class.java,
+            "sample",
+            listOf(1, 2)
+        )
+
+        methodFinder.find(
+            Sample::class.java,
+            "sample",
+            listOf(1, 2, 3)
+        )
     }
 
 }

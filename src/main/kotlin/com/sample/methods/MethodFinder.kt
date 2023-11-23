@@ -10,10 +10,10 @@ class MethodFinder(
     private val context: ApplicationContext
 ) {
 
-    fun find(clazz: Class<*>, methodName: String, parameterTypes: List<Class<*>>, args: List<Any>) {
+    fun find(clazz: Class<*>, methodName: String, args: List<Any>) {
         val bean = context.getBean(clazz)
-        val method = clazz.getDeclaredMethod(methodName, *parameterTypes.toTypedArray())
+        val method = clazz.declaredMethods.first { it.name == methodName && it.parameterCount == args.size }
         val result = method.invoke(bean, *args.toTypedArray())
-        print(result)
+        print("$method: $result")
     }
 }
