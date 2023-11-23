@@ -1,3 +1,5 @@
+package src.main.kotlin.com.sample.methods
+
 import java.lang.reflect.Method
 class Sample {
     fun sample(a: Long?, b: String, c: Double?) {
